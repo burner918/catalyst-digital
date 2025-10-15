@@ -43,7 +43,7 @@ get_header();
                         <?php else : ?>
                             <div class="project-thumbnail project-thumbnail-placeholder">
                                 <a href="<?php the_permalink(); ?>">
-                                    <div style="background: linear-gradient(135deg, var(--primary-color), var(--accent-color)); height: 300px; display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem;">
+                                    <div style="background: linear-gradient(135deg, var(--primary-color), var(--accent-color)); display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem; height: 100%;">
                                         📁
                                     </div>
                                 </a>

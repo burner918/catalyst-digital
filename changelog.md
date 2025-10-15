@@ -2,6 +2,21 @@
 
 All notable changes to the Catalyst Digital WordPress theme will be documented in this file.
 
+## [1.0.4] - October 15, 2025 at 12:01 AM EST
+
+### Improved
+- Enhanced projects archive layout with consistent card heights
+- Improved project card flexbox layout for better visual alignment
+- Fixed project thumbnail placeholder height to match image thumbnails
+- Better responsive design for project cards with proper content distribution
+
+### Technical Details
+- Added flexbox layout to project cards for consistent heights
+- Set fixed height for project thumbnails (250px) with object-fit cover
+- Improved project content layout with flex-grow for better spacing
+- Enhanced placeholder thumbnail styling to match image dimensions
+- Added margin-top auto to buttons for proper bottom alignment
+
 ## [1.0.3] - October 14, 2025 at 11:56 PM EST
 
 ### Changed
