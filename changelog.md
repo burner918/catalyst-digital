@@ -2,6 +2,28 @@
 
 All notable changes to the Catalyst Digital WordPress theme will be documented in this file.
 
+## [1.1.0] - October 15, 2025 at 1:00 AM EST
+
+### Added
+- Organized asset structure with dedicated folders for better maintainability
+- Separated CSS, JavaScript, and image assets into organized directories
+- Improved theme file organization and structure
+
+### Changed
+- Moved all CSS to `/assets/css/style.css` for better organization
+- Moved all JavaScript to `/assets/js/scripts.js` for better organization
+- Moved all images to `/assets/images/` for better organization
+- Updated all asset references to use new organized structure
+- Restructured theme files for better development workflow
+
+### Technical Details
+- Created organized asset structure: `/assets/css/`, `/assets/js/`, `/assets/images/`
+- Updated `functions.php` to reference new JavaScript location
+- Updated all image references in templates to use new asset paths
+- Moved main CSS content to assets folder while keeping theme header in root
+- Improved file organization for better maintainability and development workflow
+- Enhanced theme structure following WordPress best practices
+
 ## [1.0.9] - October 15, 2025 at 12:54 AM EST
 
 ### Fixed

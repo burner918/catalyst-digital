@@ -42,7 +42,7 @@ get_header();
             <div class="services-grid">
                 <div class="service-card">
                     <div class="service-icon">
-                        <img src="<?php echo get_template_directory_uri(); ?>/images/strategy.png" alt="Brand Strategy Icon">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/strategy.png" alt="Brand Strategy Icon">
                     </div>
                     <h3>Brand Strategy</h3>
                     <p>Build a powerful brand identity that resonates with your target audience and sets you apart from the competition.</p>
@@ -50,7 +50,7 @@ get_header();
 
                 <div class="service-card">
                     <div class="service-icon">
-                        <img src="<?php echo get_template_directory_uri(); ?>/images/web-development.png" alt="Web Development Icon">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/web-development.png" alt="Web Development Icon">
                     </div>
                     <h3>Web Development</h3>
                     <p>Custom websites and web applications built with cutting-edge technologies to deliver exceptional user experiences.</p>
@@ -58,7 +58,7 @@ get_header();
 
                 <div class="service-card">
                     <div class="service-icon">
-                        <img src="<?php echo get_template_directory_uri(); ?>/images/digital-marketing.png" alt="Digital Marketing Icon">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/digital-marketing.png" alt="Digital Marketing Icon">
                     </div>
                     <h3>Digital Marketing</h3>
                     <p>Strategic marketing campaigns that drive traffic, engage customers, and deliver measurable results.</p>
@@ -66,7 +66,7 @@ get_header();
 
                 <div class="service-card">
                     <div class="service-icon">
-                        <img src="<?php echo get_template_directory_uri(); ?>/images/data-analytics.png" alt="Analytics & Insights Icon">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/data-analytics.png" alt="Analytics & Insights Icon">
                     </div>
                     <h3>Analytics & Insights</h3>
                     <p>Data-driven strategies backed by comprehensive analytics to optimize your digital presence and ROI.</p>
@@ -74,7 +74,7 @@ get_header();
 
                 <div class="service-card">
                     <div class="service-icon">
-                        <img src="<?php echo get_template_directory_uri(); ?>/images/creative.png" alt="Content Creation Icon">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/creative.png" alt="Content Creation Icon">
                     </div>
                     <h3>Content Creation</h3>
                     <p>Engaging multimedia content that tells your story and captures the attention of your audience.</p>
@@ -82,7 +82,7 @@ get_header();
 
                 <div class="service-card">
                     <div class="service-icon">
-                        <img src="<?php echo get_template_directory_uri(); ?>/images/growth-consulting.png" alt="Growth Consulting Icon">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/growth-consulting.png" alt="Growth Consulting Icon">
                     </div>
                     <h3>Growth Consulting</h3>
                     <p>Expert guidance and strategies to accelerate your digital transformation and business growth.</p>

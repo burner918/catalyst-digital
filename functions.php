@@ -82,7 +82,7 @@ function catalyst_digital_scripts()
     wp_enqueue_style('catalyst-digital-style', get_stylesheet_uri(), array(), '1.0.0');
 
     // Enqueue theme JavaScript
-    wp_enqueue_script('catalyst-digital-scripts', get_template_directory_uri() . '/js/scripts.js', array(), '1.0.0', true);
+    wp_enqueue_script('catalyst-digital-scripts', get_template_directory_uri() . '/assets/js/scripts.js', array(), '1.0.0', true);
 
     // Enqueue comment reply script
     if (is_singular() && comments_open() && get_option('thread_comments')) {
