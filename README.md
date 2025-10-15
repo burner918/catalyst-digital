@@ -270,6 +270,20 @@ For issues or questions, please contact the development team.
 
 This theme is licensed under the GNU General Public License v2 or later.
 
+## Development Timeline
+
+This WordPress theme was built in **4 hours**, demonstrating my rapid development capabilities while maintaining professional quality and functionality. I did not spend much time at all with the styling and went with the basics that the AI used. I have a ton of opinion and preferences on the styling, but chose not to invest time into that as I interprested the purpose of the trial was to set up a staging site with the desired structure and demonstrate my process, not my design skills. If I were to focus on design, I'd spend more time setting up more classes for styles to ensure consistent aesthetic. For e.g. the button border radii would be consistent with the border radius of input fields, I'd use less of the gradient fills that AI loves to use, consolidate my typography into a couple of styles (Heading and Body), and a lot more.
+
+### Future Enhancement Opportunities
+
+With additional development time, the following improvements could be implemented:
+
+- **Better Styling**: Enhanced visual design, animations, and micro-interactions
+- **Custom Icons**: Replace emoji usage with custom SVG icons for a more professional appearance
+- **Enhanced User Experience**: More interactive elements, improved form feedback, and advanced user interactions
+- **SMTP Configuration**: Set up proper SMTP for admin email notifications to ensure reliable delivery.
+- **Acknowledgment Email for Visitor**: Set up a nice looking acknowledgment email to any visitor who fills out the contact form
+
 ---
 
 **Developed for Catalyst Digital**  
