@@ -2,6 +2,24 @@
 
 All notable changes to the Catalyst Digital WordPress theme will be documented in this file.
 
+## [1.0.9] - October 15, 2025 at 12:54 AM EST
+
+### Fixed
+- Improved required field asterisk styling in contact form
+- Cleaned up redundant CSS rules for form labels
+- Enhanced visual hierarchy for required field indicators
+
+### Changed
+- Updated form labels to use proper HTML structure for asterisks
+- Simplified CSS styling approach for required field indicators
+- Made required asterisks more visually prominent with brand color
+
+### Technical Details
+- Replaced inline asterisks with proper `<span class="required-asterisk">` elements
+- Removed redundant CSS rules and simplified styling approach
+- Required asterisks now use primary brand color for better visibility
+- Cleaner HTML structure for better accessibility and styling control
+
 ## [1.0.8] - October 15, 2025 at 12:52 AM EST
 
 ### Added

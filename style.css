@@ -494,34 +494,9 @@ p {
     color: var(--text-dark);
 }
 
-/* Style asterisks in form labels */
-.form-group label::after {
-    content: none;
-}
-
-.contact-form label {
-    position: relative;
-}
-
-/* Target labels that contain asterisk */
-.contact-form label:has(*) {
-    color: var(--text-dark);
-}
-
-/* Style the asterisk character specifically */
-.contact-form label {
-    color: var(--text-dark);
-}
-
-/* Use a more specific approach - wrap asterisk styling */
-.form-group label > span.required,
-.form-group label::first-letter {
-    color: var(--text-dark);
-}
-
-/* Alternative: target any label text containing * */
-.contact-form .form-group label {
-    color: var(--text-dark);
+/* Style required asterisks in form labels */
+.required-asterisk {
+    color: var(--primary-color);
 }
 
 .form-group input,

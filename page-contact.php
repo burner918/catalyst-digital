@@ -51,12 +51,12 @@ get_header();
                     <?php wp_nonce_field( 'catalyst_contact_form', 'catalyst_contact_nonce' ); ?>
 
                     <div class="form-group">
-                        <label for="contact-name">Name *</label>
+                        <label for="contact-name">Name <span class="required-asterisk">*</span></label>
                         <input type="text" id="contact-name" name="contact_name" placeholder="John Doe" required autofocus>
                     </div>
 
                     <div class="form-group">
-                        <label for="contact-email">Email *</label>
+                        <label for="contact-email">Email <span class="required-asterisk">*</span></label>
                         <input type="email" id="contact-email" name="contact_email" placeholder="your@email.com" required>
                     </div>
 
@@ -66,7 +66,7 @@ get_header();
                     </div>
 
                     <div class="form-group">
-                        <label for="contact-message">Message *</label>
+                        <label for="contact-message">Message <span class="required-asterisk">*</span></label>
                         <textarea id="contact-message" name="contact_message" placeholder="Please tell us about the project you have in mind. The more information the better." required></textarea>
                     </div>
 
