@@ -2,6 +2,19 @@
 
 All notable changes to the Catalyst Digital WordPress theme will be documented in this file.
 
+## [1.1.2] - October 15, 2025 at 1:21 AM EST
+
+### Fixed
+- GitHub Action workflow permissions issue for release asset uploads
+- Updated workflow to use modern softprops/action-gh-release action
+- Added explicit contents: write permissions for release asset uploads
+
+### Technical Details
+- Added `permissions: contents: write` to workflow for proper GitHub token permissions
+- Replaced deprecated `actions/upload-release-asset@v1` with `softprops/action-gh-release@v1`
+- Simplified upload configuration for better reliability
+- Fixed "Resource not accessible by integration" error
+
 ## [1.1.1] - October 15, 2025 at 1:16 AM EST
 
 ### Added
