@@ -2,6 +2,32 @@
 
 All notable changes to the Catalyst Digital WordPress theme will be documented in this file.
 
+## [1.1.4] - October 15, 2025 at 10:19 AM EST
+
+### Added
+- Comprehensive README documentation with complete setup instructions
+- Detailed technical implementation documentation
+- Complete AI prompts section documenting all development prompts used
+- Enhanced file structure documentation with organized asset folders
+- Custom Post Types setup and configuration instructions
+- Contact form integration and lead management documentation
+- REST API endpoints documentation
+- GitHub Actions workflow documentation
+- Development process and database structure details
+
+### Changed
+- Updated README from basic documentation to comprehensive developer guide
+- Enhanced setup instructions with step-by-step process
+- Added detailed customization instructions for colors, logos, and assets
+- Improved technical documentation with development workflow details
+
+### Technical Details
+- README now includes all 12 AI prompts used during development
+- Complete setup process documented from theme installation to customization
+- Technical implementation details covering CPTs, REST API, and form integration
+- Asset organization and file structure clearly documented
+- Development workflow including GitHub Actions and Composer integration
+
 ## [1.1.3] - October 15, 2025 at 1:25 AM EST
 
 ### Fixed
