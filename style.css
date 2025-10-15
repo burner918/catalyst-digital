@@ -313,6 +313,20 @@ p {
     color: var(--text-dark);
 }
 
+.btn-hero-primary {
+    background-color: var(--white);
+    color: var(--primary-color);
+    border: 2px solid var(--white);
+}
+
+.btn-hero-primary:hover {
+    background-color: transparent;
+    color: var(--white);
+    border: 2px solid var(--white);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.3);
+}
+
 .btn-accent:hover {
     background-color: #7dd9a8;
     color: var(--text-dark);
@@ -324,10 +338,14 @@ p {
    Home Page Styles
    ======================================== */
 .hero-section {
-    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    background: linear-gradient(rgba(226, 125, 61, 0.8), rgba(226, 125, 61, 0.8)), url('images/hero-banner-optimized.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     color: var(--white);
     padding: 8rem 0;
     text-align: center;
+    position: relative;
 }
 
 .hero-content h1 {
@@ -357,24 +375,29 @@ p {
     padding: 2rem;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, outline 0.3s ease;
 }
 
 .service-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    outline: 2px solid var(--primary-color);
 }
 
 .service-icon {
     width: 60px;
     height: 60px;
-    background-color: var(--accent-color);
-    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     margin-bottom: 1.5rem;
     font-size: 1.5rem;
+}
+
+.service-icon img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
 }
 
 .service-card h3 {

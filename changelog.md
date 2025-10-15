@@ -2,6 +2,33 @@
 
 All notable changes to the Catalyst Digital WordPress theme will be documented in this file.
 
+## [1.0.6] - October 15, 2025 at 12:33 AM EST
+
+### Added
+- Hero section background image with brand color overlay
+- Professional PNG icons for all service cards
+- Service card hover effects with primary color outline
+- Organized image assets in dedicated `/images` folder
+
+### Changed
+- Updated hero section to use `hero-banner-optimized.jpg` as background image
+- Replaced emoji icons with custom PNG icons in service cards
+- Removed green circular backgrounds from service icons
+- Updated "Get Started" button styling for better visibility against hero background
+- Moved all image assets to `/images` folder for better organization
+
+### Fixed
+- Removed CSS color filter that was distorting service icon colors
+- Updated image paths to reflect new `/images` folder structure
+- Improved button contrast in hero section
+
+### Technical Details
+- Hero section now uses `linear-gradient(rgba(226, 125, 61, 0.8), rgba(226, 125, 61, 0.8)), url('images/hero-banner-optimized.jpg')`
+- Service icons: strategy.png, web-development.png, digital-marketing.png, data-analytics.png, creative.png, growth-consulting.png
+- Added `.btn-hero-primary` class for white background button with brand color text
+- Service cards now have 2px primary color outline on hover with smooth transitions
+- All icons display in their original brand colors without CSS filters
+
 ## [1.0.5] - October 15, 2025 at 12:07 AM EST
 
 ### Added
