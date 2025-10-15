@@ -2,6 +2,19 @@
 
 All notable changes to the Catalyst Digital WordPress theme will be documented in this file.
 
+## [1.0.3] - October 14, 2025 at 11:56 PM EST
+
+### Changed
+- Updated navigation menu hover effect to use simple text color change instead of button background
+- Improved menu hover performance by optimizing CSS transition property
+- Menu items now change to primary color on hover without background styling
+
+### Technical Details
+- Removed background-color and white text color from menu hover states
+- Changed transition from 'all' to 'color' for better performance
+- Simplified hover effect to only change text color to primary color (#E27D3D)
+- Maintained smooth color transition animation
+
 ## [1.0.2] - October 14, 2025 at 11:49 PM EST
 
 ### Fixed
