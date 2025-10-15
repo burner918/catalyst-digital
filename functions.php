@@ -205,3 +205,71 @@ function catalyst_digital_custom_logo()
         echo '<a href="' . esc_url(home_url('/')) . '" class="site-logo">' . esc_html(get_bloginfo('name')) . '</a>';
     }
 }
+
+/**
+ * Register Custom Post Types
+ */
+
+/**
+ * Register Projects Custom Post Type
+ */
+function catalyst_digital_register_projects_cpt()
+{
+    $labels = array(
+        'name'                  => _x('Projects', 'Post Type General Name', 'catalyst-digital'),
+        'singular_name'         => _x('Project', 'Post Type Singular Name', 'catalyst-digital'),
+        'menu_name'             => __('Projects', 'catalyst-digital'),
+        'name_admin_bar'        => __('Project', 'catalyst-digital'),
+        'archives'              => __('Project Archives', 'catalyst-digital'),
+        'attributes'            => __('Project Attributes', 'catalyst-digital'),
+        'parent_item_colon'     => __('Parent Project:', 'catalyst-digital'),
+        'all_items'             => __('All Projects', 'catalyst-digital'),
+        'add_new_item'          => __('Add New Project', 'catalyst-digital'),
+        'add_new'               => __('Add New', 'catalyst-digital'),
+        'new_item'              => __('New Project', 'catalyst-digital'),
+        'edit_item'             => __('Edit Project', 'catalyst-digital'),
+        'update_item'           => __('Update Project', 'catalyst-digital'),
+        'view_item'             => __('View Project', 'catalyst-digital'),
+        'view_items'            => __('View Projects', 'catalyst-digital'),
+        'search_items'          => __('Search Project', 'catalyst-digital'),
+        'not_found'             => __('Not found', 'catalyst-digital'),
+        'not_found_in_trash'    => __('Not found in Trash', 'catalyst-digital'),
+        'featured_image'        => __('Project Image', 'catalyst-digital'),
+        'set_featured_image'    => __('Set project image', 'catalyst-digital'),
+        'remove_featured_image' => __('Remove project image', 'catalyst-digital'),
+        'use_featured_image'    => __('Use as project image', 'catalyst-digital'),
+        'insert_into_item'      => __('Insert into project', 'catalyst-digital'),
+        'uploaded_to_this_item' => __('Uploaded to this project', 'catalyst-digital'),
+        'items_list'            => __('Projects list', 'catalyst-digital'),
+        'items_list_navigation' => __('Projects list navigation', 'catalyst-digital'),
+        'filter_items_list'     => __('Filter projects list', 'catalyst-digital'),
+    );
+
+    $args = array(
+        'label'                 => __('Project', 'catalyst-digital'),
+        'description'           => __('Portfolio projects and case studies', 'catalyst-digital'),
+        'labels'                => $labels,
+        'supports'              => array('title', 'editor', 'thumbnail', 'excerpt', 'revisions'),
+        'hierarchical'          => false,
+        'public'                => true,
+        'show_ui'               => true,
+        'show_in_menu'          => true,
+        'menu_position'         => 5,
+        'menu_icon'             => 'dashicons-portfolio',
+        'show_in_admin_bar'     => true,
+        'show_in_nav_menus'     => true,
+        'can_export'            => true,
+        'has_archive'           => true,
+        'exclude_from_search'   => false,
+        'publicly_queryable'    => true,
+        'capability_type'       => 'post',
+        'show_in_rest'          => true,
+        'rewrite'               => array(
+            'slug'       => 'projects',
+            'with_front' => false,
+        ),
+    );
+
+    register_post_type('projects', $args);
+}
+add_action('init', 'catalyst_digital_register_projects_cpt', 0);

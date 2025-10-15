@@ -2,6 +2,25 @@
 
 All notable changes to the Catalyst Digital WordPress theme will be documented in this file.
 
+## [1.0.1] - October 14, 2025 at 11:39 PM EST
+
+### Added
+- Projects Custom Post Type (CPT) with full archive support
+- Archive template for projects (`archive-projects.php`)
+- Single project template (`single-projects.php`)
+- Project portfolio grid layout with thumbnails and excerpts
+- Project archive pagination support
+- Call-to-action section on projects archive page
+- Custom post type registration with proper labels and capabilities
+- Archive URL slug set to `/projects` for clean URLs
+
+### Technical Details
+- Registered 'projects' CPT with public archive functionality
+- Template hierarchy properly implemented for project archives
+- Responsive project grid layout with CSS Grid
+- SEO-friendly project archive structure
+- WordPress rewrite rules configured for custom post type archives
+
 ## [1.0.0] - October 14, 2025 at 11:22 PM EST
 
 ### Added
