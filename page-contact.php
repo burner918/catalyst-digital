@@ -33,28 +33,36 @@ get_header();
                 <h2>Send Us a Message</h2>
                 <p style="margin-bottom: 2rem;">Fill out the form below and we'll get back to you as soon as possible.</p>
 
+                <?php
+                // Display success or error messages
+                if (isset($_GET['contact_status'])) {
+                    if ($_GET['contact_status'] === 'success') {
+                        echo '<div class="contact-message contact-success" style="padding: 1rem; margin-bottom: 2rem; background-color: var(--accent-color); color: var(--text-dark); border-radius: 4px;">Thank you for your message! We\'ll get back to you soon.</div>';
+                    } elseif ($_GET['contact_status'] === 'error') {
+                        echo '<div class="contact-message contact-error" style="padding: 1rem; margin-bottom: 2rem; background-color: #f44336; color: white; border-radius: 4px;">There was an error submitting your message. Please try again.</div>';
+                    } elseif ($_GET['contact_status'] === 'invalid_email') {
+                        echo '<div class="contact-message contact-error" style="padding: 1rem; margin-bottom: 2rem; background-color: #f44336; color: white; border-radius: 4px;">Please enter a valid email address.</div>';
+                    }
+                }
+                ?>
+
                 <form class="contact-form" method="post" action="<?php echo esc_url( admin_url( 'admin-post.php' ) ); ?>">
                     <input type="hidden" name="action" value="catalyst_contact_form">
                     <?php wp_nonce_field( 'catalyst_contact_form', 'catalyst_contact_nonce' ); ?>
 
                     <div class="form-group">
-                        <label for="contact-name">Your Name *</label>
+                        <label for="contact-name">Name *</label>
                         <input type="text" id="contact-name" name="contact_name" required>
                     </div>
 
                     <div class="form-group">
-                        <label for="contact-email">Your Email *</label>
+                        <label for="contact-email">Email *</label>
                         <input type="email" id="contact-email" name="contact_email" required>
                     </div>
 
                     <div class="form-group">
-                        <label for="contact-phone">Phone Number</label>
+                        <label for="contact-phone">Phone</label>
                         <input type="tel" id="contact-phone" name="contact_phone">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="contact-subject">Subject *</label>
-                        <input type="text" id="contact-subject" name="contact_subject" required>
                     </div>
 
                     <div class="form-group">

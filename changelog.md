@@ -2,6 +2,30 @@
 
 All notable changes to the Catalyst Digital WordPress theme will be documented in this file.
 
+## [1.0.7] - October 15, 2025 at 12:43 AM EST
+
+### Added
+- Leads Custom Post Type (CPT) for lead management
+- Contact form integration with Leads CPT
+- Automatic lead creation from contact form submissions
+- Clean footer layout without widget dependencies
+
+### Changed
+- Updated contact form to create Lead records instead of just sending emails
+- Simplified footer structure to prevent unwanted widget content
+- Improved lead data management and storage
+
+### Fixed
+- Removed awkward bullet points ("October 2025", "Uncategorized") from footer
+- Cleaned up footer widget dependencies that were causing display issues
+
+### Technical Details
+- Added Leads CPT with proper post type registration
+- Contact form submissions now create new Lead posts with form data
+- Footer now uses static content instead of dynamic widgets
+- Enhanced lead tracking and management capabilities
+- Improved data collection and storage for business leads
+
 ## [1.0.6] - October 15, 2025 at 12:33 AM EST
 
 ### Added

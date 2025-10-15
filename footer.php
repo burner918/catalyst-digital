@@ -1,4 +1,5 @@
 <?php
+
 /**
  * The footer for our theme
  *
@@ -6,7 +7,7 @@
  */
 
 // Exit if accessed directly
-if ( ! defined( 'ABSPATH' ) ) {
+if (! defined('ABSPATH')) {
     exit;
 }
 ?>
@@ -17,12 +18,12 @@ if ( ! defined( 'ABSPATH' ) ) {
     <div class="container">
         <div class="footer-content">
             <div class="footer-section">
-                <h3><?php echo esc_html( get_bloginfo( 'name' ) ); ?></h3>
+                <h3><?php echo esc_html(get_bloginfo('name')); ?></h3>
                 <p>
                     <?php
-                    $description = get_bloginfo( 'description', 'display' );
-                    if ( $description || is_customize_preview() ) {
-                        echo esc_html( $description );
+                    $description = get_bloginfo('description', 'display');
+                    if ($description || is_customize_preview()) {
+                        echo esc_html($description);
                     } else {
                         echo 'Your premier digital media agency specializing in innovative solutions for modern businesses.';
                     }
@@ -30,60 +31,42 @@ if ( ! defined( 'ABSPATH' ) ) {
                 </p>
             </div>
 
-            <?php if ( is_active_sidebar( 'footer-1' ) ) : ?>
-                <div class="footer-section">
-                    <?php dynamic_sidebar( 'footer-1' ); ?>
-                </div>
-            <?php else : ?>
-                <div class="footer-section">
-                    <h3>Quick Links</h3>
-                    <?php
-                    if ( has_nav_menu( 'footer' ) ) {
-                        wp_nav_menu( array(
-                            'theme_location' => 'footer',
-                            'menu_class'     => 'footer-menu',
-                            'container'      => false,
-                            'depth'          => 1,
-                        ) );
-                    } else {
-                        ?>
-                        <ul class="footer-menu">
-                            <li><a href="<?php echo esc_url( home_url( '/' ) ); ?>">Home</a></li>
-                            <li><a href="<?php echo esc_url( home_url( '/about' ) ); ?>">About</a></li>
-                            <li><a href="<?php echo esc_url( home_url( '/contact' ) ); ?>">Contact</a></li>
-                        </ul>
-                        <?php
-                    }
-                    ?>
-                </div>
-            <?php endif; ?>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <?php
+                if (has_nav_menu('footer')) {
+                    wp_nav_menu(array(
+                        'theme_location' => 'footer',
+                        'menu_class'     => 'footer-menu',
+                        'container'      => false,
+                        'depth'          => 1,
+                    ));
+                } else {
+                ?>
+                    <ul class="footer-menu">
+                        <li><a href="<?php echo esc_url(home_url('/')); ?>">Home</a></li>
+                        <li><a href="<?php echo esc_url(home_url('/about')); ?>">About</a></li>
+                        <li><a href="<?php echo esc_url(home_url('/contact')); ?>">Contact</a></li>
+                    </ul>
+                <?php
+                }
+                ?>
+            </div>
 
-            <?php if ( is_active_sidebar( 'footer-2' ) ) : ?>
-                <div class="footer-section">
-                    <?php dynamic_sidebar( 'footer-2' ); ?>
-                </div>
-            <?php else : ?>
-                <div class="footer-section">
-                    <h3>Contact Info</h3>
-                    <p>Email: info@catalystdigital.com</p>
-                    <p>Phone: (555) 123-4567</p>
-                    <p>123 Digital Avenue<br>Suite 100<br>San Francisco, CA 94103</p>
-                </div>
-            <?php endif; ?>
-
-            <?php if ( is_active_sidebar( 'footer-3' ) ) : ?>
-                <div class="footer-section">
-                    <?php dynamic_sidebar( 'footer-3' ); ?>
-                </div>
-            <?php endif; ?>
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <p>Email: info@catalystdigital.com</p>
+                <p>Phone: (555) 123-4567</p>
+                <p>123 Digital Avenue<br>Suite 100<br>San Francisco, CA 94103</p>
+            </div>
         </div>
 
         <div class="footer-bottom">
             <p>
-                &copy; <?php echo date( 'Y' ); ?> <?php echo esc_html( get_bloginfo( 'name' ) ); ?>. All rights reserved.
+                &copy; <?php echo date('Y'); ?> <?php echo esc_html(get_bloginfo('name')); ?>. All rights reserved.
                 <?php
-                if ( function_exists( 'the_privacy_policy_link' ) ) {
-                    the_privacy_policy_link( ' | ', '' );
+                if (function_exists('the_privacy_policy_link')) {
+                    the_privacy_policy_link(' | ', '');
                 }
                 ?>
             </p>
@@ -94,4 +77,5 @@ if ( ! defined( 'ABSPATH' ) ) {
 <?php wp_footer(); ?>
 
 </body>
+
 </html>
