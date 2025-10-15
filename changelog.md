@@ -2,6 +2,21 @@
 
 All notable changes to the Catalyst Digital WordPress theme will be documented in this file.
 
+## [1.0.5] - October 15, 2025 at 12:07 AM EST
+
+### Added
+- REST API healthcheck endpoint for monitoring and diagnostics
+- Comprehensive system status reporting via API
+- Database connectivity monitoring
+- Server performance metrics tracking
+
+### Technical Details
+- Added `/wp-json/healthcheck/v1/ping` endpoint
+- Returns WordPress version, theme info, database status, and server metrics
+- Includes memory usage, PHP version, and maintenance mode detection
+- Provides site URL, multisite status, and database prefix information
+- REST API endpoint with public access for health monitoring
+
 ## [1.0.4] - October 15, 2025 at 12:01 AM EST
 
 ### Improved

@@ -273,3 +273,101 @@ function catalyst_digital_register_projects_cpt()
     register_post_type('projects', $args);
 }
 add_action('init', 'catalyst_digital_register_projects_cpt', 0);
+
+/**
+ * REST API Endpoints
+ */
+
+/**
+ * Register custom REST API routes
+ */
+function catalyst_digital_register_rest_routes()
+{
+    register_rest_route('healthcheck/v1', '/ping', array(
+        'methods'             => 'GET',
+        'callback'            => 'catalyst_digital_healthcheck_endpoint',
+        'permission_callback' => '__return_true',
+    ));
+}
+add_action('rest_api_init', 'catalyst_digital_register_rest_routes');
+
+/**
+ * Healthcheck endpoint callback
+ *
+ * @return WP_REST_Response
+ */
+function catalyst_digital_healthcheck_endpoint()
+{
+    global $wpdb;
+
+    // Get WordPress version
+    $wp_version = get_bloginfo('version');
+
+    // Get theme information
+    $theme = wp_get_theme();
+    $theme_name = $theme->get('Name');
+    $theme_version = $theme->get('Version');
+
+    // Check database connectivity
+    $db_status = 'connected';
+    try {
+        $wpdb->get_var("SELECT 1");
+    } catch (Exception $e) {
+        $db_status = 'error';
+    }
+
+    // Get memory usage
+    $memory_limit = ini_get('memory_limit');
+    $memory_usage = function_exists('memory_get_usage') ? round(memory_get_usage() / 1024 / 1024, 2) . ' MB' : 'N/A';
+
+    // Get PHP version
+    $php_version = phpversion();
+
+    // Get server time
+    $server_time = current_time('mysql');
+    $server_timestamp = current_time('timestamp');
+
+    // Check if site is in maintenance mode
+    $maintenance_mode = false;
+    if (function_exists('wp_is_maintenance_mode')) {
+        $maintenance_mode = wp_is_maintenance_mode();
+    } elseif (file_exists(ABSPATH . '.maintenance')) {
+        $maintenance_mode = true;
+    }
+
+    // Build response data
+    $response_data = array(
+        'status'      => 'ok',
+        'timestamp'   => $server_timestamp,
+        'datetime'    => $server_time,
+        'site'        => array(
+            'name'      => get_bloginfo('name'),
+            'url'       => get_site_url(),
+            'home_url'  => get_home_url(),
+        ),
+        'wordpress'   => array(
+            'version'   => $wp_version,
+            'multisite' => is_multisite(),
+        ),
+        'theme'       => array(
+            'name'      => $theme_name,
+            'version'   => $theme_version,
+        ),
+        'database'    => array(
+            'status'    => $db_status,
+            'prefix'    => $wpdb->prefix,
+        ),
+        'server'      => array(
+            'php_version'   => $php_version,
+            'memory_limit'  => $memory_limit,
+            'memory_usage'  => $memory_usage,
+            'server_software' => isset($_SERVER['SERVER_SOFTWARE']) ? sanitize_text_field($_SERVER['SERVER_SOFTWARE']) : 'Unknown',
+        ),
+        'maintenance' => array(
+            'mode'      => $maintenance_mode,
+        ),
+    );
+
+    // Return response
+    return new WP_REST_Response($response_data, 200);
+}
