@@ -6,6 +6,7 @@ on:
 
 permissions:
   contents: write
+  actions: read
 
 jobs:
   build:
@@ -40,8 +41,7 @@ jobs:
           zip -r catalyst-digital.zip catalyst-digital
 
       - name: Upload Release Asset
-        uses: softprops/action-gh-release@v1
-        with:
-          files: ./build/catalyst-digital.zip
+        run: |
+          gh release upload ${{ github.event.release.tag_name }} ./build/catalyst-digital.zip --clobber
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

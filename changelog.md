@@ -2,6 +2,19 @@
 
 All notable changes to the Catalyst Digital WordPress theme will be documented in this file.
 
+## [1.1.3] - October 15, 2025 at 1:25 AM EST
+
+### Fixed
+- GitHub Action workflow release asset upload using GitHub CLI
+- Replaced problematic upload actions with direct GitHub CLI commands
+- Added additional permissions for workflow execution
+
+### Technical Details
+- Switched to using `gh release upload` command for more reliable asset uploads
+- Added `actions: read` permission in addition to `contents: write`
+- Used `--clobber` flag to overwrite existing assets if they exist
+- GitHub CLI approach bypasses common permission issues with upload actions
+
 ## [1.1.2] - October 15, 2025 at 1:21 AM EST
 
 ### Fixed
