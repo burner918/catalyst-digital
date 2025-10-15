@@ -2,6 +2,19 @@
 
 All notable changes to the Catalyst Digital WordPress theme will be documented in this file.
 
+## [1.0.2] - October 14, 2025 at 11:49 PM EST
+
+### Fixed
+- Logo layout in header - text now appears to the right of logo image instead of below
+- Resolved nested link structure issue with WordPress custom logo function
+- Improved header branding layout with proper flexbox alignment
+
+### Technical Details
+- Restructured header.php to use separate logo wrapper div
+- Updated CSS to use flexbox for horizontal logo and text alignment
+- Fixed custom logo display to work properly with WordPress the_custom_logo() function
+- Logo text "Catalyst Digital" now displays horizontally next to logo image
+
 ## [1.0.1] - October 14, 2025 at 11:39 PM EST
 
 ### Added

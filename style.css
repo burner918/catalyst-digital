@@ -151,6 +151,49 @@ p {
     color: var(--primary-color);
 }
 
+/* Custom Logo Styles */
+.logo-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+.custom-logo {
+    max-height: 50px;
+    width: auto;
+    height: auto;
+    display: inline-block;
+}
+
+.custom-logo-link {
+    display: inline-flex;
+    align-items: center;
+}
+
+.site-title-link {
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+}
+
+.site-title {
+    display: inline-block;
+    white-space: nowrap;
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.catalyst-text {
+    color: var(--primary-color);
+}
+
+.digital-text {
+    color: var(--accent-color);
+}
+
 /* Navigation Styles */
 .main-navigation {
     display: flex;
