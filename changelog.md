@@ -2,6 +2,34 @@
 
 All notable changes to the Catalyst Digital WordPress theme will be documented in this file.
 
+## [1.0.8] - October 15, 2025 at 12:52 AM EST
+
+### Added
+- Enhanced contact form validation with real-time email validation
+- Form field placeholders for better user experience
+- Phone number pattern validation and formatting
+- Improved form styling and visual feedback
+- Client-side form validation before submission
+
+### Changed
+- Updated contact form fields with helpful placeholders
+- Enhanced form validation with better error messaging
+- Improved form styling for better visual hierarchy
+- Added autofocus to name field for better UX
+
+### Fixed
+- Form validation styling and error message display
+- Improved form accessibility and user guidance
+- Enhanced form field formatting and constraints
+
+### Technical Details
+- Added comprehensive email validation with regex patterns
+- Implemented phone number pattern validation (xxx) xxx-xxxx
+- Added real-time form validation feedback
+- Enhanced form styling with better error message display
+- Improved form accessibility with proper placeholders and labels
+- Added client-side validation before server-side processing
+
 ## [1.0.7] - October 15, 2025 at 12:43 AM EST
 
 ### Added

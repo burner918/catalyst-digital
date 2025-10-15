@@ -174,6 +174,144 @@
     }
 
     /**
+     * Email Validation
+     */
+    function initEmailValidation() {
+        const emailInputs = document.querySelectorAll('input[type="email"]');
+
+        emailInputs.forEach(function(input) {
+            // Create error message element
+            const errorMsg = document.createElement('span');
+            errorMsg.className = 'email-error-message';
+            errorMsg.style.color = '#f44336';
+            errorMsg.style.fontSize = '0.875rem';
+            errorMsg.style.marginTop = '0.25rem';
+            errorMsg.style.display = 'none';
+            errorMsg.textContent = 'Please enter a valid email address';
+
+            // Insert error message after input
+            input.parentNode.appendChild(errorMsg);
+
+            // Email validation regex
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            // Validate on blur (when user leaves field)
+            input.addEventListener('blur', function() {
+                const value = this.value.trim();
+
+                if (value === '') {
+                    // Don't show error for empty field (required attribute will handle that)
+                    errorMsg.style.display = 'none';
+                    this.style.borderColor = '';
+                    return;
+                }
+
+                if (!emailRegex.test(value)) {
+                    // Invalid email
+                    errorMsg.style.display = 'block';
+                    this.style.borderColor = '#f44336';
+                } else {
+                    // Valid email
+                    errorMsg.style.display = 'none';
+                    this.style.borderColor = '';
+                }
+            });
+
+            // Validate on input (real-time)
+            input.addEventListener('input', function() {
+                const value = this.value.trim();
+
+                if (value === '') {
+                    errorMsg.style.display = 'none';
+                    this.style.borderColor = '';
+                    return;
+                }
+
+                if (!emailRegex.test(value)) {
+                    // Invalid email - show error after user has typed something substantial
+                    if (value.length > 3) {
+                        errorMsg.style.display = 'block';
+                        this.style.borderColor = '#f44336';
+                    }
+                } else {
+                    // Valid email
+                    errorMsg.style.display = 'none';
+                    this.style.borderColor = '';
+                }
+            });
+
+            // Clear error on focus
+            input.addEventListener('focus', function() {
+                if (this.value.trim() === '') {
+                    errorMsg.style.display = 'none';
+                    this.style.borderColor = '';
+                }
+            });
+        });
+    }
+
+    /**
+     * US Phone Number Formatting
+     */
+    function initPhoneFormatting() {
+        const phoneInputs = document.querySelectorAll('input[type="tel"]');
+
+        phoneInputs.forEach(function(input) {
+            input.addEventListener('input', function(e) {
+                // Remove all non-numeric characters
+                let value = this.value.replace(/\D/g, '');
+
+                // Limit to 10 digits
+                value = value.substring(0, 10);
+
+                // Format as (XXX) XXX-XXXX
+                let formattedValue = '';
+
+                if (value.length > 0) {
+                    formattedValue = '(' + value.substring(0, 3);
+                }
+                if (value.length >= 4) {
+                    formattedValue += ') ' + value.substring(3, 6);
+                }
+                if (value.length >= 7) {
+                    formattedValue += '-' + value.substring(6, 10);
+                }
+
+                this.value = formattedValue;
+            });
+
+            // Prevent non-numeric characters from being entered
+            input.addEventListener('keypress', function(e) {
+                // Allow: backspace, delete, tab, escape, enter
+                if ([46, 8, 9, 27, 13].indexOf(e.keyCode) !== -1 ||
+                    // Allow: Ctrl+A, Ctrl+C, Ctrl+V, Ctrl+X
+                    (e.keyCode === 65 && e.ctrlKey === true) ||
+                    (e.keyCode === 67 && e.ctrlKey === true) ||
+                    (e.keyCode === 86 && e.ctrlKey === true) ||
+                    (e.keyCode === 88 && e.ctrlKey === true)) {
+                    return;
+                }
+
+                // Ensure that it is a number and stop the keypress
+                if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
+                    e.preventDefault();
+                }
+            });
+
+            // Handle paste event
+            input.addEventListener('paste', function(e) {
+                e.preventDefault();
+                const pastedText = (e.clipboardData || window.clipboardData).getData('text');
+                const numericOnly = pastedText.replace(/\D/g, '').substring(0, 10);
+
+                // Trigger input event to format
+                this.value = numericOnly;
+                this.dispatchEvent(new Event('input', { bubbles: true }));
+            });
+        });
+    }
+
+    /**
      * Add animation on scroll
      */
     function initScrollAnimations() {
@@ -206,6 +344,8 @@
         initSmoothScroll();
         initStickyHeader();
         initFormValidation();
+        initEmailValidation();
+        initPhoneFormatting();
 
         // Only init scroll animations if IntersectionObserver is supported
         if ('IntersectionObserver' in window) {

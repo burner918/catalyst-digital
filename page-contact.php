@@ -52,22 +52,22 @@ get_header();
 
                     <div class="form-group">
                         <label for="contact-name">Name *</label>
-                        <input type="text" id="contact-name" name="contact_name" required>
+                        <input type="text" id="contact-name" name="contact_name" placeholder="John Doe" required autofocus>
                     </div>
 
                     <div class="form-group">
                         <label for="contact-email">Email *</label>
-                        <input type="email" id="contact-email" name="contact_email" required>
+                        <input type="email" id="contact-email" name="contact_email" placeholder="your@email.com" required>
                     </div>
 
                     <div class="form-group">
                         <label for="contact-phone">Phone</label>
-                        <input type="tel" id="contact-phone" name="contact_phone">
+                        <input type="tel" id="contact-phone" name="contact_phone" placeholder="(555) 636-1828" pattern="\(\d{3}\) \d{3}-\d{4}" maxlength="14">
                     </div>
 
                     <div class="form-group">
                         <label for="contact-message">Message *</label>
-                        <textarea id="contact-message" name="contact_message" required></textarea>
+                        <textarea id="contact-message" name="contact_message" placeholder="Please tell us about the project you have in mind. The more information the better." required></textarea>
                     </div>
 
                     <button type="submit" class="btn btn-primary">Send Message</button>
