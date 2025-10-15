@@ -2,6 +2,22 @@
 
 All notable changes to the Catalyst Digital WordPress theme will be documented in this file.
 
+## [1.1.1] - October 15, 2025 at 1:16 AM EST
+
+### Added
+- GitHub Action workflow for automated release asset creation
+- Automated zip file generation on release creation
+- Release workflow that excludes development files (.git, .github, vendor, node_modules, etc.)
+- Automatic attachment of catalyst-digital.zip to GitHub releases
+
+### Technical Details
+- Created `.github/workflows/release.yml` for automated release process
+- Workflow triggers on release creation events
+- Uses rsync to copy theme files while excluding development dependencies
+- Creates clean zip archive named `catalyst-digital.zip`
+- Automatically uploads zip file as release asset using GitHub Actions
+- Excludes: .git, .github, vendor, node_modules, .gitignore, composer.json, composer.lock, .DS_Store
+
 ## [1.1.0] - October 15, 2025 at 1:00 AM EST
 
 ### Added

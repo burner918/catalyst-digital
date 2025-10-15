@@ -1,0 +1,47 @@
+name: Build and Release Theme
+
+on:
+  release:
+    types: [created]
+
+jobs:
+  build:
+    name: Build and Upload Release Asset
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Create theme directory structure
+        run: |
+          mkdir -p build/catalyst-digital
+
+      - name: Copy theme files (excluding specified files/folders)
+        run: |
+          rsync -av \
+            --exclude='.git' \
+            --exclude='.github' \
+            --exclude='vendor' \
+            --exclude='node_modules' \
+            --exclude='.gitignore' \
+            --exclude='composer.json' \
+            --exclude='composer.lock' \
+            --exclude='.DS_Store' \
+            --exclude='build' \
+            ./ build/catalyst-digital/
+
+      - name: Create zip archive
+        run: |
+          cd build
+          zip -r catalyst-digital.zip catalyst-digital
+
+      - name: Upload Release Asset
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ github.event.release.upload_url }}
+          asset_path: ./build/catalyst-digital.zip
+          asset_name: catalyst-digital.zip
+          asset_content_type: application/zip
